@@ -26,7 +26,8 @@ struct TrayView<Content: View>: View {
     private func viewBody() -> some View {
         VStack(spacing: 0) {
             Rectangle()
-                .foregroundColor(Color(UIColor.systemBackground).opacity(0.1))
+                .foregroundColor(Color(UIColor.systemBackground).opacity(0.01))
+                .transition(.opacity)
                 .onTapGesture { withAnimation { self.close() } }
             
             content()
